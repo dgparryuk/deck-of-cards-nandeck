@@ -56,9 +56,9 @@ MARGINS=0,0,0,0
 [ht_face]=2
 [fudge]=0.05
 
-[num_tts_cards] = 70
+[num_tts_cards] = 105
 
-'needs to be common with img-common at some point
+;needs to be common with img-common at some point
 [border_thick]=0.15
 [border_regular]=0.05
 [border_thin]=0.01

@@ -1,7 +1,7 @@
 INCLUDE=deck-common.nde
 INCLUDE=deck-macros.nde
 
-'info
+;info
 [suits]=rainbow.png|unicorn.png|car.png|block.png
 [colors]=#000000|#ff2b8b|#049f00|#FF0000
 [deckname]=kids-fun-deck.png
@@ -20,10 +20,10 @@ CARDS=[num_tts_cards]
 FOR=a,1,[numlines]
   FOR=b,0,[numsuits]-1
     ; make Unicorn bigger. swap [base_scale] with [ace_scale]
-    if = ({suits?{b+1}} = unicorn.png) _AND_ ({cornervalue?a} = A)
-      DRAWPIP = {{cardvalue?a}+13*b}, {img_suit?{b+1}}, {[wid_internal]*({x?a}/[wid_cells]) - ({scale?a}*[ace_scale])/2 + [wid_border]}, {[ht_internal] *({y?a}/[ht_cells])  - {{scale?a}*[ace_scale]}/2 + [ht_border]}, {{scale?a}*[ace_scale]},{angle?a},{flags?a}
+     if = ({suits?{b+1}} = spades.png) _AND_ ({cornervalue?a} = A)
+      IMAGE = {{cardvalue?a}+13*b}, {img_suit?{b+1}}, {[wid_internal]*({x?a}/[wid_cells]) - ({scale?a}*[ace_scale])/2 + [wid_border]}, {[ht_internal] *({y?a}/[ht_cells])  - {{scale?a}*[ace_scale]}/2 + [ht_border]}, {{scale?a}*[ace_scale]}, {{scale?a}*[ace_scale]},{angle?a},{flags?a}
     else
-      DRAWPIP = {{cardvalue?a}+13*b}, {img_suit?{b+1}}, {[wid_internal]*({x?a}/[wid_cells]) - ({scale?a}*[base_scale])/2 + [wid_border]}, {[ht_internal] *({y?a}/[ht_cells])  - {{scale?a}*[base_scale]}/2 + [ht_border]}, {{scale?a}*[base_scale]},{angle?a},{flags?a}
+      IMAGE= {{cardvalue?a}+13*b}, {img_suit?{b+1}}, {[wid_internal]*({x?a}/[wid_cells]) - ({scale?a}*[base_scale])/2 + [wid_border]}, {[ht_internal] *({y?a}/[ht_cells])  - {{scale?a}*[base_scale]}/2 + [ht_border]}, {{scale?a}*[base_scale]}, {{scale?a}*[base_scale]},{angle?a},{flags?a}
     endif
     CORNER_ICON = {{cardvalue?a}+13*b},{img_suit?{b+1}},{cornervalue?a},{colors?{b+1}}
     if = {imgface?a} <> 0

@@ -39,3 +39,13 @@ Ideally [suits], [colors], [deckname], and the LINK file would be read from anot
 
 
 
+dgparryuk notes
+i've added a couple of csv's and nde & txt files
+extended - will make A,2,3,4,5,6,7,8,9,10,J,Q,K,11,12,0,1 with 4 suits
+discworld - will make a pack suitable for ""Cripple Mr Onion""
+
+for the extended & Discworld to show correctly i changed the Macro CORNER_ICON in deck-marcos.nde and created a CORNER_ICON2 which uses the narrow font for 7a, 11 & 12, so also added an if routine to check for 
+also moved the corrections from the second branch over to the master branch
+the discworld icons were stolen from a PDF of Cripple Mr Onion that i've had for ages but can't find where it came from originally
+
+_

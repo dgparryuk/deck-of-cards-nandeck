@@ -1,0 +1,11 @@
+INCLUDE=deck-common.nde
+INCLUDE=deck-macros.nde
+
+OVERSAMPLE=2
+IMAGEFILTER=LANCZOS
+
+[dir_tts]=tts
+BORDER=ROUNDED,#000000,.3
+IMAGE=1,C:\Users\Parry\OneDrive - Delta Computing\Parry Data\Games\Software\Nandeck Folder\Files\deck-of-cards-1.27.1_update_bugs\img\kittycorn_bkg.png,10%,20%,5,5
+
+save=1,[dir_tts]/kittycorn-back.png

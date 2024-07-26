@@ -1,0 +1,40 @@
+INCLUDE=deck-common.nde
+INCLUDE=deck-macros.nde
+
+;info
+[suits]=coin.png|crown.png|cup.png|elephant.png|octogram.png|stave.png|sword.png|turtle.png
+[colors]=#ffec00|#c10e1a|#db8f1b|#009cdf|#59287f|#5e3e1b|#6f6e6e|#386638
+[deckname]=discworld.png
+
+[numsuits]=8
+[numcards]=105
+[numlines]=58
+[cardrange]="1-105"
+;deck-common.nde contains a line that specifies how many cards
+
+
+'rectangle=[cardrange],[wid_border],[ht_border_mod],[wid_internal],[ht_internal_mod],#DDDDDD
+
+LINK = "discworld.csv"
+CARDS=[numcards]
+[img_suit]=JOIN([dir_img],"/",[suits])
+
+FOR=a,1,[numlines]
+    FOR=b,0,[numsuits]-1
+        ; make Unicorn bigger. swap [base_scale] with [ace_scale]
+        if = ({suits?{b+1}} = spades.png) _AND_ ({cornervalue?a} = A)
+        IMAGE = {{cardvalue?a}+13*b}, {img_suit?{b+1}}, {[wid_internal]*({x?a}/[wid_cells]) - ({scale?a}*[ace_scale])/2 + [wid_border]}, {[ht_internal] *({y?a}/[ht_cells])  - {{scale?a}*[ace_scale]}/2 + [ht_border]}, {{scale?a}*[ace_scale]}, {{scale?a}*[ace_scale]},{angle?a},{flags?a}
+    else
+        IMAGE= {{cardvalue?a}+13*b}, {img_suit?{b+1}}, {[wid_internal]*({x?a}/[wid_cells]) - ({scale?a}*[base_scale])/2 + [wid_border]}, {[ht_internal] *({y?a}/[ht_cells])  - {{scale?a}*[base_scale]}/2 + [ht_border]}, {{scale?a}*[base_scale]}, {{scale?a}*[base_scale]},{angle?a},{flags?a}
+    endif
+    CORNER_ICON = {{cardvalue?a}+13*b},{img_suit?{b+1}},{cornervalue?a},{colors?{b+1}}
+    if = {imgface?a} <> 0
+    image={{cardvalue?a}+13*b},{imgface?a},50%-[wid_face]/2,{yface?a},[wid_face],[ht_face],0,TP
+endif
+NEXT
+NEXT
+SAVETTS=[num_tts_cards],[dir_tts]/[deckname]
+
+
+VISUAL=, 10, 10
+ENDVISUAL
