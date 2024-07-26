@@ -2,12 +2,12 @@ INCLUDE=deck-common.nde
 INCLUDE=deck-macros.nde
 
 ;info
-[suits]=coin.png|crown.png|cup.png|elephant.png|octogram.png|stave.png|sword.png|turtle.png
-[colors]=#ffec00|#c10e1a|#db8f1b|#009cdf|#59287f|#5e3e1b|#6f6e6e|#386638
-[deckname]=discworld.png
+[suits]=calcifer.png|ponyo.png|jiji.png|sootsprite.png|noname.png|totoro.png
+[colors]=#ee834d|#ee834d|#000000|#000000|#768797|#768797
+[deckname]=ghibli.png
 
-[numsuits]=8
-[numcards]=105
+[numsuits]=6
+[numcards]=75
 [numlines]=58
 [cardrange]="1-105"
 ;deck-common.nde contains a line that specifies how many cards
@@ -15,7 +15,8 @@ INCLUDE=deck-macros.nde
 
 'rectangle=[cardrange],[wid_border],[ht_border_mod],[wid_internal],[ht_internal_mod],#DDDDDD
 
-LINK = "discworld.csv"
+LINK = "data-basic-deck.csv"
+CARDS=[numcards]
 [img_suit]=JOIN([dir_img],"/",[suits])
 
 FOR=a,1,[numlines]
@@ -36,6 +37,7 @@ FOR=a,1,[numlines]
 endif
 NEXT
 NEXT
+SAVETTS=[num_tts_cards],[dir_tts]/[deckname]
 
 
 VISUAL=, 10, 10

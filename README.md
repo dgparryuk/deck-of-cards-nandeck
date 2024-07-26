@@ -38,14 +38,15 @@ you can see how this works by comparing basic-deck.nde and kids-fun-deck.nde and
 Ideally [suits], [colors], [deckname], and the LINK file would be read from another LINK file. This is on the ToDo list.
 
 
+dgparryuk notes 
 
-dgparryuk notes
-i've added a couple of csv's and nde & txt files
-extended - will make A,2,3,4,5,6,7,8,9,10,J,Q,K,11,12,0,1 with 4 suits
+i've added a couple of csv's and nde files 
+extended - will make A,2,3,4,5,6,7,8,9,10,J,Q,K,11,12,0,1 with 4 suits 
 discworld - will make a pack suitable for ""Cripple Mr Onion""
+inverse - will make red & black cards with white pips
 
-for the extended & Discworld to show correctly i changed the Macro CORNER_ICON in deck-marcos.nde and created a CORNER_ICON2 which uses the narrow font for 7a, 11 & 12, so also added an if routine to check for 
-also moved the corrections from the second branch over to the master branch
+for the extended & Discworld to show correctly i changed the Macro CORNER_ICON in deck-marcos.nde and created a CORNER_ICON2 which uses the narrow font for 7a, 11 & 12, 
+so also added an if routine to check for 11, 12 & 7a - respectivly
+also moved the corrections from the second branch over to the master branch on mine
 the discworld icons were stolen from a PDF of Cripple Mr Onion that i've had for ages but can't find where it came from originally
-
-_
+also removed some files that aren't relevent to means
